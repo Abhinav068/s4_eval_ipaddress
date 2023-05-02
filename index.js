@@ -1,4 +1,5 @@
 const express = require('express');
+const cors=require('cors');
 const { connection } = require('./config/db');
 const { userRouter } = require('./Routers/user.router');
 const { ipinfoRouter } = require('./Routers/ipinfoRouter');
@@ -8,6 +9,7 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(logger);
 app.use('/user',userRouter);
