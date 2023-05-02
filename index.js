@@ -5,7 +5,7 @@ const { userRouter } = require('./Routers/user.router');
 const { ipinfoRouter } = require('./Routers/ipinfoRouter');
 const { authenticate } = require('./middlewares/authenticate.middleware');
 const { logger } = require('./middlewares/logger');
-require('dotenv').config();
+require('dotenv').config(); 
 
 const app = express();
 
