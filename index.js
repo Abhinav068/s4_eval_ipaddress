@@ -12,14 +12,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(logger);
-app.use('/user',userRouter);
-app.use(authenticate);
-app.use('/ip',ipinfoRouter);
-
-const port = process.env.port;
 app.get('/', (req, res) => {
     res.send('homepage');
 })
+app.use('/user',userRouter);
+app.use('/ip',ipinfoRouter);
+
+const port = process.env.port;
+app.use(authenticate);
 
 app.listen(port, async () => {
     await connection
